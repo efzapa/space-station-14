@@ -1,0 +1,42 @@
+<Document>
+  # Avali
+
+  <Box>
+    <GuideEntityEmbed Entity="MobAvali" Caption=""/>
+  </Box>
+
+  [color=#ffa500]Warning! This species is not recommended for new players due to major gameplay changes![/color]
+
+  Avali are a species of ammonia-based intelligent bird/raptor people and due to this odd combination many refer to them as "Space Raptors" and, as you might expect, are carnivores. Their unique biology allows them to deal exceedingly well with the cold, and is capable of basic flight in no to low gravity environments.
+
+  ## Racial Features
+
+  - Receive [color=#ffa500]40% more fire damage[/color] and [color=#1e90ff]40% less cold damage[/color].
+  - Can stand in tempatures of up to [color=#1e90ff]-50c before taking cold damage[/color].
+  - Deal [color=red]6.25[/color] slashing damage with claws.
+  - Can fly in Zero-G.
+  - [color=#ffbc48]Nanite Technology![/color] Can encase themselves in a [color=#ffbc48]Nanite Shell[/color] to heal most common types of damage.
+  - 2x Hunger rate, stay fed!
+  - Can only eat meat-related food items (including organs) and pills.
+  - Heal airloss from Ammonia and Amoxla but..
+  - Saline will burn you, and both Dexalin and Dexalin+ are lethal to you. Remember to remind doctors about it!
+  - Fall into crit at 90 and dead at 180.
+
+  ## Sounds
+  Avali, like Resomi, make sounds akin to common bird noises found on Earth, such as chirping and squawking.
+
+  ## Nexus Technological Hivemind
+  Due to an implant that all Avali are given at birth, they have a neural connection to the Nexus.
+  This allows them to communicate with others of their species over a technological network.
+  Use the [color=orange]+n[/color] prefix in chat to send a message to all Avali and Resomi anonymously.
+
+  ## Weapon Knockback
+  Avali are very lightweight, and as such take so much knockback from large caliber weapons that they get pushed around.
+  They will generally take half as much knockback as Resomi.
+  Avali also will receive [color=yellow]Stun Damage[/color] from large caliber weapons for each shot.
+  In general, the weapons that will give you knockback are [color=yellow]Rifles, Sniper Rifles, Shotguns, LMGs, HMGs, and Grenade Launchers.[/color]
+  Look out especially for Rocket launchers; since they are recoil-less, you will actually get [color=red]pulled forward with the rocket[/color] for a short distance.
+  The safest weapons to use that will give you no knockback are [color=green]Pistols and SMGs[/color].
+  No-slips can help mitigate some of the knockback from firing weapons, but not all of it!
+  Also keep in mind that any stamina resistance you have DOES work to reduce the stamina damage from these weapons.
+</Document>

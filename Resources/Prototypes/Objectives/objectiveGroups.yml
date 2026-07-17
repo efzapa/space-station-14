@@ -135,6 +135,7 @@
     ClothingNeckMantleDecoratedSalvagerStealObjective: 1 # Salvage Lead's mantle. They're usually always wearing it...
     SalvageShuttleCircuitboardStealObjective: 1 # technically qm
     MiningShuttleCircuitboardStealObjective: 1 # ditto
+    ShipyardCircuitboardStealObjective: 1 # bridge/caps locker
     SpyglassCaptainStealObjective: 0.7 #Cappy
     # Starlight-end
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
@@ -173,17 +174,5 @@
     RenaultStealObjective: 1
     ShivaStealObjective: 1
     TropicoStealObjective: 1
-
-# Starlight start
-- type: weightedRandom # Starlight
-  id: ThiefObjectiveGroupEscape # Starlight
-  weights: # Starlight
-    ThiefObjectiveGroupEscapeForced: 1 # Starlight, have to do it this way because it's hardcoded to pick a group from a group
-
-- type: weightedRandom
-  id: ThiefObjectiveGroupEscapeForced # Starlight
-  weights:
-#    EscapeThiefShuttleObjective: # Starlight forced already anyways
-    EscapeMasterThiefObjective: 1 # Starlight
 
 #Crew, wizard, when you code it...

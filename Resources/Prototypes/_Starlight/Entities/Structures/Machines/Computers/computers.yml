@@ -49,7 +49,7 @@
   parent: BaseComputer
   id: AbductorConsole
   name: abductor console
-  description: A computer that is used for spying on the station.
+  description: retrieve people marked by scientist tools. Also used for buying replacement gear and linking the agent's vest.
   components:
   - type: AbductorConsole
   - type: Sprite
@@ -62,6 +62,8 @@
       enum.EdgeConnectionVisuals.ConnectionMask:
         console:
           None: { state: console, sprite: _Starlight/Structures/Machines/abductor_console.rsi }
+  - type: EdgeConnection
+    connectionKey: other
   - type: ActivatableUI
     key: enum.AbductorConsoleUIKey.Key
   - type: UserInterface
@@ -109,13 +111,20 @@
   parent: BaseComputer
   id: AbductorHumanObservationConsole
   name: human observation console
-  description: Use this to set teleporter destination or retrieve people marked by scientist tools. Also used for buying replacement gear and linking the agent's vest.
+  description: A computer that is used for spying and teleporting on the station.
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Machines/abductor_camera_console.rsi
     layers:
     - map: ["console"]
       state: console
+  - type: GenericVisualizer  # Override to prevent edge connection sprites
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        console:
+          None: { state: console }
+  - type: EdgeConnection
+    connectionKey: other
   - type: RemoteEyeConsole
     remoteEntityProto: AbductorHumanObservationConsoleEye
     color: "#A04B81"
@@ -213,6 +222,7 @@
 - type: entity
   parent: BaseComputerShuttle
   id: CompuerShuttleSalvage
+  categories: [ ShouldMapStation ]
   name: salvage shuttle console
   components:
   - type: Sprite
@@ -313,6 +323,7 @@
     - Law
     - Misc
     - CentralCommand
+    - NanoTrasen
     - Syndicate
     - Silicon
     - Xenoborg
@@ -387,6 +398,7 @@
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttleMining
+  categories: [ ShouldMapStation ]
   name: mining shuttle console
   components:
     - type: Sprite
@@ -492,6 +504,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsEngineering
+  categories: [ ShouldMapStation ]
   name: engineering communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -521,7 +534,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: EngineeringCommsComputerCircuitboard
     - type: PointLight
@@ -533,6 +546,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsMedical
+  categories: [ ShouldMapStation ]
   name: medical communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -559,7 +573,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: MedicalCommsComputerCircuitboard
     - type: PointLight
@@ -571,6 +585,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsScience
+  categories: [ ShouldMapStation ]
   name: science communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -597,7 +612,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: ScienceCommsComputerCircuitboard
     - type: PointLight
@@ -609,6 +624,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsSecurity
+  categories: [ ShouldMapStation ]
   name: security communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -638,7 +654,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: SecurityCommsComputerCircuitboard
     - type: PointLight
@@ -650,6 +666,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsService
+  categories: [ ShouldMapStation ]
   name: service communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -676,7 +693,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: ServiceCommsComputerCircuitboard
     - type: PointLight
@@ -688,6 +705,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsCargo
+  categories: [ ShouldMapStation ]
   name: cargo communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -714,7 +732,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: CargoCommsComputerCircuitboard
     - type: PointLight
@@ -726,6 +744,7 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsLaw
+  categories: [ ShouldMapStation ]
   name: law communications console
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -752,7 +771,7 @@
       canBroadcast: false
       canShuttle: false
     - type: SecureCommandTerminalConsole
-      authTerminal: true
+      enabled: false
     - type: Computer
       board: LawCommsComputerCircuitboard
     - type: PointLight
@@ -797,3 +816,5 @@
     radius: 1.5
     energy: 1.6
     color: "#b89f25"
+  - type: StealTarget
+    stealGroup: ShipyardComputerCircuitboard
